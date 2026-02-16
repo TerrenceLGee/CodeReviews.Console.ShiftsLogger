@@ -17,7 +17,7 @@ public static class InputHelpers
 
         while (!validInput)
         {
-            input = AnsiConsole.Ask<string>($"[DarkOliveGreen1]Enter {phrase}: [/]");
+            input = AnsiConsole.Ask<string>($"[DarkOliveGreen1]{phrase}: [/]");
             validInput = AnsiConsole.Confirm($"[DarkSeaGreen1]You entered '{input}' is this correct? [/]");
             AnsiConsole.Clear();
         }
@@ -52,7 +52,7 @@ public static class InputHelpers
 
         while (!isValidEmail)
         {
-            emailAddress = GetInput("Enter email address: ");
+            emailAddress = GetInput("Enter email address ");
             isValidEmail = EmailValidation.IsValidEmailAddress(emailAddress);
 
             if (!isValidEmail)
@@ -74,8 +74,16 @@ public static class InputHelpers
 
         while (!isPasswordConfirmed)
         {
-            password = AnsiConsole.Prompt(new TextPrompt<string>("[DarkTurquoise]Enter a password for your account: [/]")
+            password = AnsiConsole.Prompt(new TextPrompt<string>("[DarkTurquoise]Enter a password for your account\n" +
+                "Password must be at least 8 characters and at least one upper, lower, digit and non alphanumeric character: [/]")
                 .Secret());
+
+            if (!PasswordValidation.IsValidPassword(password))
+            {
+                UiHelpers.PressAnyKeyToContinueError("Password entered is invalid\nPlease try again");
+                continue;
+            }
+
             var confirmedPassword = AnsiConsole.Prompt(new TextPrompt<string>("[DarkTurquoise]Re-enter password to confirm: [/]")
                 .Secret());
 
