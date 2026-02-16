@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ShiftsLogger.Api.TerrenceLGee/ShiftsLogger.Api.TerrenceLGee.csproj" />
+  <Project Path="ShiftsLogger.Api.Tests.TerrenceLGee/ShiftsLogger.Api.Tests.TerrenceLGee.csproj" Id="c8563ee1-6368-402e-ace6-5be0a3a993a9" />
+  <Project Path="ShiftsLogger.Client.TerrenceLGee/ShiftsLogger.Client.TerrenceLGee.csproj" Id="d8fe9974-93cf-45f9-9ee3-91a1c0ff7b23" />
+  <Project Path="ShiftsLogger.Contracts.TerrenceLGee/ShiftsLogger.Contracts.TerrenceLGee.csproj" />
+</Solution>

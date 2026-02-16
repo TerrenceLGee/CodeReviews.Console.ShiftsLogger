@@ -1,0 +1,6 @@
+@ShiftsLogger.Api.TerrenceLGee_HostAddress = http://localhost:5076
+
+GET {{ShiftsLogger.Api.TerrenceLGee_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
